@@ -28,5 +28,6 @@ module.exports.GrovePi = {
     , DigitalButton: require('./sensors/digitalButton')
     , LoudnessAnalog: require('./sensors/loudnessAnalogSensor')     
     , RotaryAnalog: require('./sensors/rotaryAngleAnalogSensor')
+    , MoistureAnalog: require('./sensors/moistureAnalogSensor')
   }
 }
