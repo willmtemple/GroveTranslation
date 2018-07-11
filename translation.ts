@@ -1,4 +1,4 @@
-import * as GrovePi from 'libs/index';
+import GrovePi from './GrovePi';
 
 //var Commands = GrovePi.commands
 //var Board = GrovePi.board

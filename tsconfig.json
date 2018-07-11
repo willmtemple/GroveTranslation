@@ -1,15 +1,12 @@
 {
     "compilerOptions": {
-        "module": "es6",
+        "module": "commonjs",
         "moduleResolution": "node",
         "target": "es5",
-        "lib": [
-            "es6",
-        ],
         "removeComments": true,
         "sourceMap": true,
         // Strict settings
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "noImplicitThis": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
