@@ -1,3 +1,5 @@
+declare module 'libs/index';
+
 declare namespace GrovePi {
     interface Options {
         debug? : boolean,

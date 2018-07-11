@@ -1,44 +1,44 @@
-import * as GrovePi from './libs'
+import * as GrovePi from 'libs/index';
 
-var Commands = GrovePi.commands
-var Board = GrovePi.board
-var AccelerationI2cSensor = GrovePi.sensors.AccelerationI2C
+//var Commands = GrovePi.commands
+//var Board = GrovePi.board
+//var AccelerationI2cSensor = GrovePi.sensors.AccelerationI2C
 var UltrasonicDigitalSensor = GrovePi.sensors.UltrasonicDigital
-var AirQualityAnalogSensor = GrovePi.sensors.AirQualityAnalog
-var DHTDigitalSensor = GrovePi.sensors.DHTDigital
-var LightAnalogSensor = GrovePi.sensors.LightAnalog
+//var AirQualityAnalogSensor = GrovePi.sensors.AirQualityAnalog
+//var DHTDigitalSensor = GrovePi.sensors.DHTDigital
+//var LightAnalogSensor = GrovePi.sensors.LightAnalog
 var DigitalButtonSensor = GrovePi.sensors.DigitalButton
-var LoudnessAnalogSensor = GrovePi.sensors.LoudnessAnalog
+//var LoudnessAnalogSensor = GrovePi.sensors.LoudnessAnalog
 var RotaryAngleAnalogSensor = GrovePi.sensors.RotaryAnalog
-var DustDigitalSensor = GrovePi.sensors.dustDigital
+//var DustDigitalSensor = GrovePi.sensors.dustDigital
 var DigitalOutput = GrovePi.sensors.DigitalOutput
 
 namespace grove {
     // Led
-    function ledOn(port) {
+    export function ledOn(port : number) {
         var led = new DigitalOutput(port);
         led.turnOn();
     }
 
-    function ledOff(port) {
+    export function ledOff(port : number) {
         var led = new DigitalOutput(port);
         led.turnOff();
     }
 
     // Ultrasonic Ranger
-    function pollUltrasonicRanger(port) {
+    export function pollUltrasonicRanger(port : number) {
         var ultrasonicSensor = new UltrasonicDigitalSensor(port)
 
-        ultrasonicSensor.on('change', function (res) {
+        ultrasonicSensor.on('change', function (_res : any) {
             // Do on Change
         })
         ultrasonicSensor.watch()
     }
 
-    function pollButtonPress(port) {
+    export function pollButtonPress(port : number) {
         var buttonSensor = new DigitalButtonSensor(port)
 
-        buttonSensor.on('down', function (res) {
+        buttonSensor.on('down', function (res : string) {
             if(res == 'longpress') {
                 // Handle long press
             }
@@ -49,16 +49,16 @@ namespace grove {
         buttonSensor.watch()
     }
 
-    function pollRotaryAngle(port) {
+    export function pollRotaryAngle(port : number) {
         var rotaryAngleSensor = new RotaryAngleAnalogSensor(port)
         
         rotaryAngleSensor.start()
-        rotaryAngleSensor.on('data', function (res) {
+        rotaryAngleSensor.on('data', function (_res : any) {
             // Do on Change
         })
     }
 
-    function getRotaryAngleValue(port) {
+    export function getRotaryAngleValue(port : number) {
         var rotaryAngleSensor = new RotaryAngleAnalogSensor(port)
         
         rotaryAngleSensor.start()
