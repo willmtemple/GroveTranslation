@@ -11,17 +11,20 @@ var DigitalButtonSensor = GrovePi.sensors.DigitalButton
 //var LoudnessAnalogSensor = GrovePi.sensors.LoudnessAnalog
 var RotaryAngleAnalogSensor = GrovePi.sensors.RotaryAnalog
 //var DustDigitalSensor = GrovePi.sensors.dustDigital
-var DigitalOutput = GrovePi.sensors.DigitalOutput
+//var DigitalOutput = GrovePi.sensors.DigitalOutput
+var MoistureSensor = GrovePi.sensors.MoistureSensor
+var LED = GrovePi.sensors.LED 
+var Buzzer = GrovePi.sensors.Buzzer
 
 namespace grove {
     // Led
     export function ledOn(port : number) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOn();
     }
 
     export function ledOff(port : number) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOff();
     }
 
@@ -35,6 +38,7 @@ namespace grove {
         ultrasonicSensor.watch()
     }
 
+    // Button
     export function pollButtonPress(port : number) {
         var buttonSensor = new DigitalButtonSensor(port)
 
@@ -49,6 +53,7 @@ namespace grove {
         buttonSensor.watch()
     }
 
+    // Rotary Angle
     export function pollRotaryAngle(port : number) {
         var rotaryAngleSensor = new RotaryAngleAnalogSensor(port)
         
@@ -61,9 +66,25 @@ namespace grove {
     export function getRotaryAngleValue(port : number) {
         var rotaryAngleSensor = new RotaryAngleAnalogSensor(port)
         
-        rotaryAngleSensor.start()
-
         return rotaryAngleSensor.read()
+    }
+
+    // Moisture Sensor
+    export function getMoistureValue(port : number) {
+        var moistureSensor = new MoistureSensor(port)
+
+        return moistureSensor.read()
+    }
+
+    // Buzzer
+    export function buzzerOn(pin : number) {
+        var buzzer = new Buzzer(pin)
+        buzzer.turnOn()
+    }
+
+    export function buzzerOff(pin : number) {
+        var buzzer = new Buzzer(pin)
+        buzzer.turnOff()
     }
 }
 

@@ -1,4 +1,4 @@
-var GenericDigital
+var DigitalOutput = GenericDigitalOutput
 
 module.exports = {
     commands: require('./commands')
@@ -30,7 +30,9 @@ module.exports = {
     , DigitalButton: require('./sensors/digitalButton')
     , LoudnessAnalog: require('./sensors/loudnessAnalogSensor')     
     , RotaryAnalog: require('./sensors/rotaryAngleAnalogSensor')
-    // Aliases for nonexistent sensors
-    , Led : require("./sensors/genericDigitalOutputSensor")
+    , MoistureAnalog: require('./sensors/moistureAnalogSensor')
+    // Aliases for output sensors
+    , LED: GenericDigitalOutput
+    , Buzzer : GenericDigitalOutput
   }
 }
