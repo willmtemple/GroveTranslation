@@ -13,16 +13,17 @@ var RotaryAngleAnalogSensor = GrovePi.sensors.RotaryAnalog
 var DustDigitalSensor = GrovePi.sensors.dustDigital
 var DigitalOutput = GrovePi.sensors.DigitalOutput
 var MoistureSensor = GrovePi.sensors.MoistureSensor
+var LED = GrovePi.sensors.LED
 
 namespace grove {
     // Led
     function ledOn(port) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOn();
     }
 
     function ledOff(port) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOff();
     }
 

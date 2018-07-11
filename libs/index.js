@@ -1,3 +1,5 @@
+var DigitalOutput = GenericDigitalOutput
+
 module.exports.GrovePi = {
     commands: require('./commands')
   , board: require('./grovepi')
@@ -29,5 +31,8 @@ module.exports.GrovePi = {
     , LoudnessAnalog: require('./sensors/loudnessAnalogSensor')     
     , RotaryAnalog: require('./sensors/rotaryAngleAnalogSensor')
     , MoistureAnalog: require('./sensors/moistureAnalogSensor')
+    // Aliases for output sensors
+    , LED: GenericDigitalOutput
+    , Buzzer : GenericDigitalOutput
   }
 }

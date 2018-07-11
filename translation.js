@@ -13,15 +13,17 @@ var LoudnessAnalogSensor = GrovePi.sensors.LoudnessAnalog;
 var RotaryAngleAnalogSensor = GrovePi.sensors.RotaryAnalog;
 var DustDigitalSensor = GrovePi.sensors.dustDigital;
 var DigitalOutput = GrovePi.sensors.DigitalOutput;
+var MoistureSensor = GrovePi.sensors.MoistureSensor;
+var LED = GrovePi.sensors.LED;
 var grove;
 (function (grove) {
     // Led
     function ledOn(port) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOn();
     }
     function ledOff(port) {
-        var led = new DigitalOutput(port);
+        var led = new LED(port);
         led.turnOff();
     }
     // Ultrasonic Ranger
@@ -53,8 +55,11 @@ var grove;
     }
     function getRotaryAngleValue(port) {
         var rotaryAngleSensor = new RotaryAngleAnalogSensor(port);
-        rotaryAngleSensor.start();
         return rotaryAngleSensor.read();
+    }
+    function getMoistureValue(port) {
+        var moistureSensor = new MoistureSensor(port);
+        return moistureSensor.read();
     }
 })(grove || (grove = {}));
 exports["default"] = grove;
