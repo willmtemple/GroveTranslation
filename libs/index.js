@@ -1,4 +1,4 @@
-var DigitalOutput = GenericDigitalOutput
+var DigitalOutput = require('./sensors/genericDigitalOutputSensor');
 
 module.exports = {
     commands: require('./commands')
@@ -11,7 +11,7 @@ module.exports = {
         , I2C: require('./sensors/base/i2cSensor')
       }
     , DigitalInput: require('./sensors/genericDigitalInputSensor')
-    , DigitalOutput: require('./sensors/genericDigitalOutputSensor')
+    , DigitalOutput: DigitalOutput
     , AccelerationI2C: require('./sensors/accelerationI2cSensor')
     , AirQualityAnalog: require('./sensors/airQualityAnalogSensor')
     , ChainableRGBLedDigital: require('./sensors/chainableRGBLedDigitalSensor')
@@ -32,7 +32,7 @@ module.exports = {
     , RotaryAnalog: require('./sensors/rotaryAngleAnalogSensor')
     , MoistureAnalog: require('./sensors/moistureAnalogSensor')
     // Aliases for output sensors
-    , LED: GenericDigitalOutput
-    , Buzzer : GenericDigitalOutput
+    , LED: DigitalOutput
+    , Buzzer : DigitalOutput
   }
 }

@@ -11,4 +11,4 @@ MoistureAnalogSensor.prototype.read = function() {
     return AnalogSensor.prototype.read.call(this)
 }
 
-module.exports = MoistureSensor
+module.exports = MoistureAnalogSensor
