@@ -1,4 +1,4 @@
-declare module 'libs/index';
+import _g = require("./libs");
 
 declare namespace GrovePi {
     interface Options {
@@ -160,3 +160,5 @@ declare namespace GrovePi {
         }
     }
 }
+
+export default _g;
