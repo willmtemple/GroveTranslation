@@ -31,6 +31,7 @@ module.exports = {
     , LoudnessAnalog: require('./sensors/loudnessAnalogSensor')     
     , RotaryAnalog: require('./sensors/rotaryAngleAnalogSensor')
     , MoistureAnalog: require('./sensors/moistureAnalogSensor')
+    , SoundAnalog: require('./sensors/soundAnalogSensor')
     // Aliases for output sensors
     , LED: DigitalOutput
     , Buzzer : DigitalOutput
