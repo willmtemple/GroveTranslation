@@ -1,0 +1,22 @@
+{
+  "name": "grovetranslation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willmtemple/GroveTranslation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willmtemple/GroveTranslation/issues"
+  },
+  "homepage": "https://github.com/willmtemple/GroveTranslation#readme",
+  "devDependencies": {
+    "@types/node": "^10.5.2"
+  }
+}

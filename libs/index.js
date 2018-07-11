@@ -1,6 +1,6 @@
 var DigitalOutput = GenericDigitalOutput
 
-module.exports.GrovePi = {
+module.exports = {
     commands: require('./commands')
   , board: require('./grovepi')
   , sensors: {
