@@ -2,13 +2,13 @@ var AnalogSensor = require('./base/analogSensor')
 var helpers = require('./helpers')
 var commands = require('../commands')
 
-function MoistureAnalogSensor(pin) {
+function SoundAnalogSensor(pin) {
     AnalogSensor.apply(this, Array.prototype.slice.call(arguments))
 }
-MoistureAnalogSensor.protoype = new AnalogSensor()
+SoundAnalogSensor.prototype = new SoundAnalogSensor()
 
-MoistureAnalogSensor.prototype.read = function() {
+SoundAnalogSensor.prototype.read = function() {
     return AnalogSensor.prototype.read.call(this)
 }
 
-module.exports = MoistureAnalogSensor
+module.exports = SoundAnalogSensor

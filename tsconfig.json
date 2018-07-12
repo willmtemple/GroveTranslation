@@ -11,7 +11,7 @@
         // Strict settings
         "noImplicitAny": false,
         "noImplicitThis": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "noUnusedParameters": true,
         "strictNullChecks": true,
         "alwaysStrict": true,
