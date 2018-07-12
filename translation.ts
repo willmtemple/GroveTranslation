@@ -52,7 +52,11 @@ namespace grove {
     function createOrGetSensor(port : number, type : PortType) : GrovePi.base.sensor {
         var storedPort = _configuredPorts[port];
         if (storedPort == undefined) {
-            let sensorObject = _typeToConstructor[type](port);
+            let ctor = _typeToConstructor.get(type);
+            let sensorObject = ctor ? ctor(port) : undefined;
+            if (sensorObject == undefined) {
+                throw Error("Could not get ctor for type: " + type);
+            }
             _configuredPorts[port] = {
                 type: type,
                 sensor: sensorObject
