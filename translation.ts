@@ -76,7 +76,7 @@ namespace grove {
 
     export function ledOff(port : number) {
         const led = createOrGetSensor(port, PortType.LED);
-        led.sensor.turnOff();
+        led.turnOff();
     }
 
     // Ultrasonic Ranger
